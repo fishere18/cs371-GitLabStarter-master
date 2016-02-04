@@ -16,8 +16,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -37,6 +40,25 @@ public class TextModActivity extends ActionBarActivity {
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
+
+        Button reverse = (Button) findViewById(R.id.reverseButton);
+        reverse.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+                Button reverse = (Button) findViewById(R.id.reverseButton);
+                TextView editText = (TextView) findViewById(R.id.editText);
+                String text = editText.getText().toString();
+                String result = "";
+
+                for (int i=(text.length()-1);i>=0;i--){
+                    result = (result + text.charAt(i));
+
+                }
+                editText.setText(result);
+
+            }
+        });
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
