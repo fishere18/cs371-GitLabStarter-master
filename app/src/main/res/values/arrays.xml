@@ -10,6 +10,8 @@
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/c_rod</item>
+        <item>@mipmap/elias</item>
+
     </array>
 
     <string-array name="spinner_names">
@@ -17,6 +19,7 @@
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
         <item>Christian Rodriguez</item>
+        <item>Elias Paraiso</item>
     </string-array>
 
 </resources>
