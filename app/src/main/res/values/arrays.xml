@@ -9,7 +9,9 @@
         <item>@mipmap/kitten</item>
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
+        <item>@mipmap/giselle</item>
         <item>@mipmap/c_rod</item>
+        <item>@mipmap/elijah</item>
         <item>@mipmap/elias</item>
 
     </array>
@@ -18,7 +20,9 @@
         <item>Sleeping Kitten</item>
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
+        <item>Giselle</item>
         <item>Christian Rodriguez</item>
+        <item>Elijah Fisher</item>
         <item>Elias Paraiso</item>
     </string-array>
 
