@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +21,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -36,6 +35,10 @@ public class TextModActivity extends ActionBarActivity {
      EditText editText;
 
 
+    private Button copyButton;
+    private EditText editText;
+    private Spinner spinner;
+
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -48,18 +51,21 @@ public class TextModActivity extends ActionBarActivity {
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
+        editText = (EditText)findViewById(R.id.editText);
 
         clearButton = (Button)findViewById(R.id.clearButton);
-        editText =(EditText)findViewById(R.id.editText);
+
+        Button copyButton = (Button)findViewById(R.id.copyButton);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
+
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, spinnerNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // bind the spinner and adapter
@@ -143,4 +149,13 @@ public class TextModActivity extends ActionBarActivity {
             // your code here
         }
     }
+    public void Copy(View selectedItemView){
+        String newText = editText.getText().toString();
+        String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
+
+        newText = newText + spinnerNames[spinner.getSelectedItemPosition()];
+        editText.setText(newText);
+
+    }
+
 }
