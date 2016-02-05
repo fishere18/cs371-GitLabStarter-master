@@ -31,6 +31,9 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
 
+    Button upperButton;
+    Button lowerButton;
+
      Button clearButton;
      EditText editText;
 
@@ -52,6 +55,8 @@ public class TextModActivity extends ActionBarActivity {
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
         editText = (EditText)findViewById(R.id.editText);
+        upperButton = (Button) findViewById(R.id.button6);
+        lowerButton = (Button) findViewById(R.id.button7);
 
         clearButton = (Button)findViewById(R.id.clearButton);
 
@@ -148,6 +153,14 @@ public class TextModActivity extends ActionBarActivity {
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
         }
+    }
+
+    public void upperButton(View v) {
+        editText.setText(editText.getText().toString().toUpperCase());
+    }
+
+    public void lowerButton(View v) {
+        editText.setText(editText.getText().toString().toLowerCase());
     }
     public void Copy(View selectedItemView){
         String newText = editText.getText().toString();
