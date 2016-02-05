@@ -36,8 +36,7 @@ public class TextModActivity extends ActionBarActivity {
     Button upperButton;
     Button lowerButton;
 
-     Button clearButton;
-     EditText editText;
+    Button clearButton;
 
 
     private Button copyButton;
