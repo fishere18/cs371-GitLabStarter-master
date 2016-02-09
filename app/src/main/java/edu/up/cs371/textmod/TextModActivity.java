@@ -39,7 +39,6 @@ public class TextModActivity extends ActionBarActivity {
     Button jumbleButton;
     Button clearButton;
 
-
     private Button copyButton;
     private EditText editText;
     private Spinner spinner;
