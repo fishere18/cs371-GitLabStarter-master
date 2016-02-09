@@ -38,10 +38,10 @@ public class TextModActivity extends ActionBarActivity {
 
     Button clearButton;
 
+    EditText editText;
+    Spinner spinner;
 
-    private Button copyButton;
-    private EditText editText;
-    private Spinner spinner;
+    Button noSpaceButton;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -80,7 +80,7 @@ public class TextModActivity extends ActionBarActivity {
 
         clearButton = (Button)findViewById(R.id.clearButton);
 
-        Button copyButton = (Button)findViewById(R.id.copyButton);
+        noSpaceButton = (Button)findViewById(R.id.noSpaceButton);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -189,6 +189,13 @@ public class TextModActivity extends ActionBarActivity {
         newText = newText + spinnerNames[spinner.getSelectedItemPosition()];
         editText.setText(newText);
 
+    }
+
+    public void noWhiteSpace (View v) {
+        String newText = editText.getText().toString();
+
+        newText = newText.replaceAll("\\s", "");
+        editText.setText(newText);
     }
 
 }
