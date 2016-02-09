@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -35,7 +36,7 @@ public class TextModActivity extends ActionBarActivity {
 
     Button upperButton;
     Button lowerButton;
-
+    Button randLetterButton;
     Button clearButton;
 
 
@@ -77,7 +78,7 @@ public class TextModActivity extends ActionBarActivity {
         editText = (EditText)findViewById(R.id.editText);
         upperButton = (Button) findViewById(R.id.button6);
         lowerButton = (Button) findViewById(R.id.button7);
-
+        randLetterButton = (Button)findViewById(R.id.randLetterButton);
         clearButton = (Button)findViewById(R.id.clearButton);
 
         Button copyButton = (Button)findViewById(R.id.copyButton);
@@ -190,5 +191,23 @@ public class TextModActivity extends ActionBarActivity {
         editText.setText(newText);
 
     }
+    public void randLetter(View v){
+        String aWord = editText.getText().toString();
+        int aWordLen = aWord.length();
+        Random r = new Random();
+        int result = r.nextInt(aWordLen);
+        String last;
+        String first;
+
+        char c = (char)(r.nextInt(26) + 'a');
+
+        first = aWord.substring(0,result);
+        last = aWord.substring(result,aWordLen);
+
+        String endProduct = first + c + last;
+
+        editText.setText(endProduct);
+    }
+
 
 }
