@@ -38,7 +38,7 @@ public class TextModActivity extends ActionBarActivity {
 
     Button clearButton;
 
-
+    private Button altCaseButton;
     private Button copyButton;
     private EditText editText;
     private Spinner spinner;
@@ -77,6 +77,7 @@ public class TextModActivity extends ActionBarActivity {
         editText = (EditText)findViewById(R.id.editText);
         upperButton = (Button) findViewById(R.id.button6);
         lowerButton = (Button) findViewById(R.id.button7);
+        altCaseButton = (Button) findViewById(R.id.buttonAltCase);
 
         clearButton = (Button)findViewById(R.id.clearButton);
 
@@ -148,6 +149,24 @@ public class TextModActivity extends ActionBarActivity {
 
             editText.setText(" ");
     }
+    public void alternateCase(View v){
+
+        String text = editText.getText().toString();
+        String newText = "";
+
+        for (int i=0; i<text.length(); i++){
+            if(i%2==0) {
+                newText = newText + text.toUpperCase().charAt(i);
+            }
+            else
+            {
+                newText = newText + text.toLowerCase().charAt(i);
+            }
+
+        }
+        editText.setText(newText);
+    }
+
 
     /**
      * class that handles our spinner's selection events
