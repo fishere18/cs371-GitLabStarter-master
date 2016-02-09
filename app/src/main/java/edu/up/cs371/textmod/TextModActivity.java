@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -35,7 +36,7 @@ public class TextModActivity extends ActionBarActivity {
 
     Button upperButton;
     Button lowerButton;
-
+    Button jumbleButton;
     Button clearButton;
 
 
@@ -77,6 +78,7 @@ public class TextModActivity extends ActionBarActivity {
         editText = (EditText)findViewById(R.id.editText);
         upperButton = (Button) findViewById(R.id.button6);
         lowerButton = (Button) findViewById(R.id.button7);
+        jumbleButton = (Button) findViewById(R.id.jumbleButton);
 
         clearButton = (Button)findViewById(R.id.clearButton);
 
@@ -188,6 +190,17 @@ public class TextModActivity extends ActionBarActivity {
 
         newText = newText + spinnerNames[spinner.getSelectedItemPosition()];
         editText.setText(newText);
+
+    }
+    public void jumbleButton(View v){
+        String text = editText.getText().toString();
+        Random r = new Random();
+        int q = r.nextInt(text.length());
+        String first = text.substring(0,q);
+        String last = text.substring(q,text.length());
+        String product = last + first;
+        editText.setText(product);
+
 
     }
 
