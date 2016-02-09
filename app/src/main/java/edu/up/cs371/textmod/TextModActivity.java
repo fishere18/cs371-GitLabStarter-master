@@ -34,6 +34,7 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
 
+
     Button upperButton;
     Button lowerButton;
     Button jumbleButton;
