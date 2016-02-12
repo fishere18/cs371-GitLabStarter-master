@@ -34,9 +34,11 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
 
+
     Button upperButton;
     Button lowerButton;
     Button randLetterButton;
+    Button jumbleButton;
     Button clearButton;
 
     EditText editText;
@@ -68,7 +70,7 @@ public class TextModActivity extends ActionBarActivity {
                 String text = editText.getText().toString();
                 String result = "";
 
-                for (int i=(text.length()-1);i>=0;i--){
+                for (int i = (text.length() - 1); i >= 0; i--) {
                     result = (result + text.charAt(i));
 
                 }
@@ -84,9 +86,11 @@ public class TextModActivity extends ActionBarActivity {
         lowerButton = (Button) findViewById(R.id.button7);
         randLetterButton = (Button)findViewById(R.id.randLetterButton);
         altCaseButton = (Button) findViewById(R.id.buttonAltCase);
+        jumbleButton = (Button) findViewById(R.id.jumbleButton);
 
         clearButton = (Button)findViewById(R.id.clearButton);
 
+        Button copyButton = (Button)findViewById(R.id.copyButton);
         noSpaceButton = (Button)findViewById(R.id.noSpaceButton);
 
         // Set up the spinner so that it shows the names in the spinner array resources
@@ -213,6 +217,17 @@ public class TextModActivity extends ActionBarActivity {
 
         newText = newText + spinnerNames[spinner.getSelectedItemPosition()];
         editText.setText(newText);
+
+    }
+    public void jumbleButton(View v){
+        String text = editText.getText().toString();
+        Random r = new Random();
+        int q = r.nextInt(text.length());
+        String first = text.substring(0,q);
+        String last = text.substring(q,text.length());
+        String product = last + first;
+        editText.setText(product);
+
 
     }
 
